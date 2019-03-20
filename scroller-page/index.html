@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <div class="container">
+        <p id="random"></p>
+        <div id="target">計算中</div>
+    </div>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</body>
+<style>
+body{
+    overflow-wrap: break-word;
+}
+</style>
+    <script>
+    var count = 0;
+    setInterval(function () {
+        var val = Math.floor(Math.random() * 100);
+        var html = $("#random").after(val);
+        count++;
+        if(count % 30 == 0){
+            $("html,body").animate({ scrollTop: $('#target').offset().top });
+        }
+    }, 1);
+    // $(function () {
+    //     var count = 0;
+    //     while(count < 100000000){
+    //         var val = Math.floor(Math.random() * 10);
+    //         var html = $("#random").after(val);
+    //         count++;
+    //         if (count % 10 == 0) {
+    //             $("html,body").animate({ scrollTop: $('#target').offset().top });
+    //         }
+    //     }
+    // });
+    </script>
+</html>
